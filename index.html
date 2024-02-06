@@ -1,33 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Rock, Paper, Scissors</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
 
-  Score
-  Rules
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <header class="title-head">
+      <div class="title">
+        <img id="logo"
+          src="images/logo-bonus.svg"
+          alt="Rock Paper Scissors Lizard Spock"
+          srcset=""
+        />
+      </div>
+      <div class="score-section">
+        <p id="score-title">SCORE</p>
+        <p id="score">0</p>
+      </div>
+    </header>
+    <main id="playground">
+      <section class="play-buttons">
+        <img  id="pentagon" src="images/bg-pentagon.svg" alt="" srcset="" />
+        <button name="scissors" class="btn border-wrapper scissors">
+          <div class="btns"></div>
+        </button>
+        <button name="paper" class="btn border-wrapper paper">
+          <div class="btns"></div>
+        </button>
+        <button name="rock" class="btn border-wrapper rock">
+          <div class="btns"></div>
+        </button>
+        <button name="lizard" class="btn border-wrapper lizard">
+          <div class="btns"></div>
+        </button>
+        <button name="spock" class="btn border-wrapper spock">
+          <div class="btns"></div>
+        </button>
+      </section>
 
-  You Picked
-  The House Picked
+      <section class="result">
+        <div id="player-btn">
+          <div class="bg-shadow-player">
+            <span style="--i: 0"></span><span style="--i: 1"></span
+            ><span style="--i: 3"></span>
+          </div>
+          <p class="res-title">YOU PICKED</p>
+        </div>
+        <div class="final">
+          <p class="result-text">YOU WON!</p>
+          <button class="play-again">PLAY AGAIN</button>
+        </div>
+        <div id="system-btn">
+          <p class="res-title">THE HOUSE PICKED</p>
+          <div class="bg-shadow-system">
+            <span style="--i: 0"></span><span style="--i: 1"></span
+            ><span style="--i: 3"></span>
+          </div>
+        </div>
+      </section>
+      <section class="rules-modal">
+        <h3>RULES</h3>
+        <button class="close-btn">
+          <img src="images/icon-close.svg" alt="" srcset="" />
+        </button>
+        <img src="images/image-rules-bonus.svg" alt="" srcset="" />
+      </section>
+      <button class="rules">RULES</button>
+    </main>
 
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-
-
-</body>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>

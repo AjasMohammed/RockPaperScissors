@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100svh;
+  background: linear-gradient(
+    to bottom,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.title-head {
+  width: 50%;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.score-section {
+  width: 130px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 15px;
+}
+#score-title {
+  color: hsl(229, 64%, 46%);
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+#score {
+  color: hsl(229, 25%, 31%);
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.play-buttons {
+  position: relative;
+}
+
+.btns {
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 100%;
+  padding: 1rem;
+  box-shadow: inset 0 4px rgba(0, 0, 0, 0.3);
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  background-position: center;
+  cursor: pointer;
+  width: 90%;
+  height: 90%;
+}
+.btns img {
+  width: 2rem;
+}
+.border-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute !important;
+  padding: 1rem;
+  border-radius: 100%;
+  box-shadow: inset 0 -4px rgba(0, 0, 0, 0.3);
+  border: 0;
+}
+
+.scissors > .btns {
+  background-image: url("images/icon-scissors.svg");
+}
+.scissors > .btns {
+  background-image: url("images/icon-scissors.svg");
+}
+.paper > .btns {
+  background-image: url("images/icon-paper.svg");
+}
+.rock > .btns {
+  background-image: url("images/icon-rock.svg");
+}
+.lizard > .btns {
+  background-image: url("images/icon-lizard.svg");
+}
+.spock > .btns {
+  background-image: url("images/icon-spock.svg");
+}
+
+.scissors {
+  top: -7%;
+  left: 35%;
+  background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.paper {
+  top: 30%;
+  right: -7%;
+  background: linear-gradient(
+    to bottom,
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+}
+
+.rock {
+  bottom: -7%;
+  right: 7%;
+  background: linear-gradient(
+    to bottom,
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+}
+.lizard {
+  bottom: -7%;
+  left: 7%;
+  background: linear-gradient(
+    to bottom,
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%)
+  );
+}
+.spock {
+  top: 30%;
+  left: -7%;
+  background: linear-gradient(
+    to bottom,
+    hsl(189, 59%, 53%),
+    hsl(189, 58%, 57%)
+  );
+}
+
+.result {
+  width: 100vw;
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.result .border-wrapper:not(:has(.play-again)) {
+  position: static !important;
+  width: 10rem;
+  height: 10rem;
+  pointer-events: none;
+}
+#player-btn,
+#system-btn {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.res-title,
+.result-text {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 3px;
+  position: absolute;
+  top: -4rem;
+  width: 15rem;
+  color: #fff;
+}
+.bg-shadow-system, .bg-shadow-player {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  z-index: -1;
+}
+.pulse span {
+  animation: wave-animation 5s ease-out infinite;
+  animation-delay: calc(1s * var(--i));
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  opacity: 0.8;
+  z-index: -2;
+  border-radius: 100%;
+}
+
+@keyframes wave-animation {
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+.final {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.result-text {
+  font-size: 3rem;
+  position: static !important;
+  text-transform: uppercase;
+}
+.play-again {
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: hsl(237, 49%, 15%);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 3rem;
+  border: 0;
+}
+
+.rules-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80%;
+  border-radius: 10px;
+  padding-inline: 2rem;
+  /* margin-block: 2rem; */
+}
+
+.close-btn{
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.show{
+    display: flex!important;
+}
+.rules{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 3rem;
+    right: 5rem;
+    letter-spacing: 3px;
+}
+.rules-modal > h3{
+    width: 100%;
+    font-size: 2rem;
+    color: hsl(229, 25%, 31%);
+}
+@media (max-width: 400px) {
+    body{
+        margin-block: 5rem;
+        gap: 6rem;
+    }
+    .title-head{
+        width: 80%;
+        height: 100px;
+        border-radius: 5px;
+    }
+    .score-section{
+        width: 90px;
+        height: 80px;
+        border-radius: 5px;
+        padding-top: 5px;
+    }
+    #score-title{
+        font-size: 12px;
+    }
+    .border-wrapper{
+        width: 4rem;
+        height: 4rem;
+    }
+    .btns{
+        padding: 20px;
+    }
+    #playground{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 80%;
+    }
+    .rules{
+        position: static;
+        bottom: 10px;
+        right: 10px;
+    }
+    .rules-modal{
+        height: 100%;
+    }
+    .rules-modal > h3{
+        text-align: center;
+    }
+    .close-btn{
+        bottom: 1rem;
+        top: unset;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    #pentagon{
+        width: 13rem;
+    }
+    #logo{
+        width: 3rem;
+    }
+
+    .result{
+        row-gap: 6rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .final{
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+    .res-title{
+        font-size: 12px;
+        top: 9rem;
+        width: 9rem;;
+    }
+.result .border-wrapper:not(:has(.play-again)) {
+  width: 8rem;
+  height: 8rem;
+}
+}
